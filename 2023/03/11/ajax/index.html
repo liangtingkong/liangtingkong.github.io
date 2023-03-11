@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ajax和json​      无刷新获取数据  xml  可扩展标记语言  全是自定义标签  用来表示一些数据  （被json取代)*  ​    优点    无刷新获取数据     根据事件来更新页面内容     缺点  没有浏览历史，不能后退    存在跨域问题   seo不太友好    http 协议  超文本传输协议规定了浏览器和万维网服务器之间互相通信的规则  请求报文  行    (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/11/ajax/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ajax和json​      无刷新获取数据  xml  可扩展标记语言  全是自定义标签  用来表示一些数据  （被json取代)*  ​    优点    无刷新获取数据     根据事件来更新页面内容     缺点  没有浏览历史，不能后退    存在跨域问题   seo不太友好    http 协议  超文本传输协议规定了浏览器和万维网服务器之间互相通信的规则  请求报文  行    (">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-11T12:40:26.109Z">
+<meta property="article:modified_time" content="2023-03-10T14:39:34.074Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/11/ajax/" class="article-date">
+  <time datetime="2023-03-11T12:40:26.109Z" itemprop="datePublished">2023-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ajax和json"><a href="#ajax和json" class="headerlink" title="ajax和json"></a>ajax和json</h1><p>​      无刷新获取数据</p>
+<ul>
+<li><p>xml  可扩展标记语言  全是自定义标签  用来表示一些数据  （被json取代)*</p>
+</li>
+<li><p>​    优点  </p>
+<ul>
+<li>无刷新获取数据    </li>
+<li>根据事件来更新页面内容  </li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>没有浏览历史，不能后退   </li>
+<li>存在跨域问题  </li>
+<li>seo不太友好</li>
+</ul>
+</li>
+</ul>
+<h4 id="http-协议-超文本传输协议"><a href="#http-协议-超文本传输协议" class="headerlink" title="http 协议  超文本传输协议"></a>http 协议  超文本传输协议</h4><p>规定了浏览器和万维网服务器之间互相通信的规则</p>
+<ul>
+<li><p>请求报文</p>
+<ul>
+<li><p><em>行    (GET)POST  /s?ie=utf-8  Http/1.1</em>  </p>
+</li>
+<li><p><em>头    HOST :  atguigu.com</em></p>
+<p>​      <em>Cookie:  name=guigu</em></p>
+<p>​       <em>Content-type:  application/x-www-form-urlencoded</em></p>
+<p>​       <em>User-agent: chorme  83</em>  </p>
+</li>
+<li><p>空行</p>
+</li>
+<li><p><em>体</em>    （如果是GET，请求体为空）（POST不为空）username=admin&amp;password=admin</p>
+</li>
+</ul>
+</li>
+<li><p>响应报文</p>
+<ul>
+<li><p>行  HTTP/1.1（协议版本）  200（状态码）  OK（状态字符串）</p>
+</li>
+<li><p>头  Content-Type:text/html;charset=utf-8</p>
+<p>​     Content-length:2048</p>
+<p>​     Content-encoding: gzip</p>
+</li>
+<li><p>空行 </p>
+</li>
+<li><p>体 </p>
+</li>
+<li><p>```html</p>
+<ul>
+<li><ul>
+<li> <html></li>
+</ul>
+<p>  ​       <em><head></head></em></p>
+<p>  ​       <em><body></body></em></p>
+<p>  ​      </html>  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ajax操作</span><br><span class="line">  </span><br><span class="line">  1. 创建对象</span><br><span class="line">  </span><br><span class="line">  2. 初始化  设置请求方法和 url</span><br><span class="line">  </span><br><span class="line">  3. 发送</span><br><span class="line">  </span><br><span class="line">  4. 事件绑定  处理服务端返回结果</span><br><span class="line">     </span><br><span class="line">     - xhr.onreadystatechange（）  </span><br><span class="line">     - readystate是xhr的属性  表示状态 0(开始时原属性) 1(open已调用) 2(send调用完毕) 3(服务端返回部分结果)  4(返回所有结果)</span><br><span class="line">  </span><br><span class="line">  5. 代码</span><br><span class="line">     </span><br><span class="line">     ```js</span><br><span class="line">     //引入express</span><br><span class="line">     const express = require(&#x27;express&#x27;);</span><br><span class="line">     //创建应用对象</span><br><span class="line">     const app =express();</span><br><span class="line">     //创建路由规则</span><br><span class="line">     app.get(&#x27;/server&#x27;,(request,response)=&gt;&#123;</span><br><span class="line">         //设置响应头  设置允许跨域</span><br><span class="line">         response.setHeader(&#x27;Access-Control-Allow-Origin&#x27;,&#x27;*&#x27;);</span><br><span class="line">         //设置响应体</span><br><span class="line">         response.send(&#x27;Hello ajax&#x27;);</span><br><span class="line">     &#125;);</span><br><span class="line">     //监听端口启动服务</span><br><span class="line">     app.listen(8000,()=&gt;&#123;</span><br><span class="line">         console.log(&#x27;服务器已启动,端口8000监听&#x27;);</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> btn=<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>)</span><br><span class="line">   btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">     <span class="comment">//ajax操作</span></span><br><span class="line">     <span class="comment">//创建对象</span></span><br><span class="line">     <span class="keyword">const</span> xhr =<span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line">     <span class="comment">//初始化  设置请求方法和 url</span></span><br><span class="line">     xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8000/server&#x27;</span>)</span><br><span class="line">     <span class="comment">//发送</span></span><br><span class="line">     xhr.<span class="title function_">send</span>()</span><br><span class="line">     <span class="comment">//事件绑定  处理服务端返回结果</span></span><br><span class="line">     xhr.<span class="property">onreadystatechange</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">         <span class="comment">//判断</span></span><br><span class="line">         <span class="keyword">if</span>(xhr.<span class="property">readyState</span>===<span class="number">4</span>)&#123;</span><br><span class="line">             <span class="comment">//判断响应状态码</span></span><br><span class="line">             <span class="keyword">if</span>(xhr.<span class="property">status</span>&gt;=<span class="number">200</span> &amp;&amp;xhr.<span class="property">status</span>&lt;<span class="number">300</span>)&#123;</span><br><span class="line">                 <span class="comment">//处理结果  行  头  空行   体</span></span><br><span class="line">                 <span class="comment">//响应行</span></span><br><span class="line">                 <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">status</span>);<span class="comment">//响应状态码</span></span><br><span class="line">                 <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">statusText</span>);<span class="comment">//状态字符串</span></span><br><span class="line">                 <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">getAllResponseHeaders</span>);<span class="comment">//响应头</span></span><br><span class="line">                 <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">response</span>);<span class="comment">//响应体</span></span><br><span class="line">             &#125;         </span><br><span class="line">           &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="6">
+<li><p>设置url参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;http://127.0.0.1:8000/server /* ?a=100&amp;b=200&amp;c=300&#x27;</span> */)</span><br></pre></td></tr></table></figure></li>
+<li><p>```js</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            width: 400px;
+            height: 100px;
+            border: solid 1px pink;
+        }
+
+<pre><code>&lt;/style&gt;
+</code></pre>
+</head>
+<body>
+
+<pre><code>&lt;div class=&quot;button&quot;&gt;&lt;/div&gt;
+</code></pre>
+</body>
+<script>
+    const btn=document.querySelector('.button')
+    window.addEventListener('keydown',function(){
+      //ajax操作
+      //创建对象
+      const xhr =new XMLHttpRequest()
+      //初始化  设置请求方法和 url
+      xhr.open('POST','http://127.0.0.1:8000/json-server')
+      //自动转换 
+      xhr.responseType="json";
+      //设置请求头
+      //xhr.setRequestHeader('Content-Type','text/html;')
+      //发送
+      xhr.send('')
+      //事件绑定  处理服务端返回结果
+      xhr.onreadystatechange=function(){
+          //判断
+          if(xhr.readyState===4){
+              //判断响应状态码
+              if(xhr.status>=200 &&xhr.status<300){
+                  //处理结果  行  头  空行   体
+                  //响应行
+                  //console.log(xhr.status);//响应状态码
+                  //console.log(xhr.statusText);//状态字符串
+                  //console.log(xhr.getAllResponseHeaders);//响应头
+                  //console.log(xhr.response);//响应体
+                  //console.log(xhr.response);
+                  btn.innerHTML=xhr.response.age
+
+<pre><code>              //手动将字符串变为对象
+              //let data = JSON.parse(xhr.response)
+              //console.log(data);
+          &#125;         
+        &#125;
+  &#125;
+
+&#125;)
+</code></pre>
+<p></script></p>
+</html>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. ```js</span><br><span class="line">   //引入express</span><br><span class="line">   const express = require(&#x27;express&#x27;);</span><br><span class="line">   const &#123; json &#125; = require(&#x27;express/lib/response&#x27;);</span><br><span class="line">   //创建应用对象</span><br><span class="line">   const app =express();</span><br><span class="line">   //创建路由规则</span><br><span class="line">   app.get(&#x27;/server&#x27;,(request,response)=&gt;&#123;</span><br><span class="line">       //设置响应头  设置允许跨域</span><br><span class="line">       response.setHeader(&#x27;Access-Control-Allow-Origin&#x27;,&#x27;*&#x27;);</span><br><span class="line">       //设置响应体</span><br><span class="line">       response.send(&#x27;Hello ajax&#x27;);</span><br><span class="line">   &#125;);</span><br><span class="line">   </span><br><span class="line">   app.all(&#x27;/json-server&#x27;,(request,response)=&gt;&#123;</span><br><span class="line">       //设置响应头  设置允许跨域</span><br><span class="line">       response.setHeader(&#x27;Access-Control-Allow-Origin&#x27;,&#x27;*&#x27;);</span><br><span class="line">       response.setHeader(&#x27;Access-Control-Allow-Headers&#x27;,&#x27;*&#x27;)</span><br><span class="line">       //响应数据 </span><br><span class="line">       const data=&#123;</span><br><span class="line">           name:&#x27;mqm&#x27;,</span><br><span class="line">           age:23</span><br><span class="line">       &#125;</span><br><span class="line">       //对对象进行字符串转换  </span><br><span class="line">       let str  = JSON.stringify(data)</span><br><span class="line">       //设置响应体</span><br><span class="line">       response.send(str);</span><br><span class="line">   &#125;);</span><br><span class="line">   //监听端口启动服务</span><br><span class="line">   app.listen(8000,()=&gt;&#123;</span><br><span class="line">       console.log(&#x27;服务器已启动,端口8000监听&#x27;);</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><ul>
+<li>同源：协议，域名，端口号，必须相同ajax默认同源策略     违背就是跨域</li>
+</ul>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><ul>
+<li><p>非官方跨域解决方案，只接受get请求</p>
+</li>
+<li><p>jsonp借助页面的script标签来跨域的</p>
+</li>
+<li><p>jsonp的使用</p>
+<p>1.在页面中通过script标签引用服务器</p>
+<p>2.在页面中写一个处理数据的函数</p>
+<p>3.服务器返回的返回结果形式为函数调用</p>
+</li>
+</ul>
+<h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4><ul>
+<li><p>cors 跨域资源共享，官方的跨域解决办法</p>
+<p>特点：</p>
+<p>不需要在客服端做任何特殊的操作，完全在服务器进行，支持get和post</p>
+</li>
+<li><p>cors如何工作？</p>
+<p>cors是通过设置一个响应头来告诉浏览器，该请求允许跨域，浏览器收到该响应以后就会对响应放行</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/11/ajax/" data-id="clf3yhsow0001i8v6ecck63or" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/03/11/jq/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/11/ajax/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/jq/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/es6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/VUE/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

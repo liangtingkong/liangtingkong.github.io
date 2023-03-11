@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js原型与原型链js原型 函数的prototype属性  每个函数都有一个prototype属性，它默认指向一个object空对象（即为原型对象）  原型对象有一个属性constructor，它指向函数对象  &#96; function fn (){}         console.log(fn.prototype.constructor &#x3D;&#x3D;&#x3D; fn)； &#x2F;&#x2F;&#x2F;&#x2F;true &#96;   给原型对象添加属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/11/js%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="js原型与原型链js原型 函数的prototype属性  每个函数都有一个prototype属性，它默认指向一个object空对象（即为原型对象）  原型对象有一个属性constructor，它指向函数对象  &#96; function fn (){}         console.log(fn.prototype.constructor &#x3D;&#x3D;&#x3D; fn)； &#x2F;&#x2F;&#x2F;&#x2F;true &#96;   给原型对象添加属性">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/86173/Desktop/前端/markdown/图片/QQ截图20220420205026.png">
+<meta property="og:image" content="c:/Users/86173/Desktop/前端/markdown/图片/yuanxinglian.png">
+<meta property="article:published_time" content="2023-03-11T12:39:49.811Z">
+<meta property="article:modified_time" content="2022-09-22T18:04:29.068Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/86173/Desktop/前端/markdown/图片/QQ截图20220420205026.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js原型与学习进度" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/11/js%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/" class="article-date">
+  <time datetime="2023-03-11T12:39:49.811Z" itemprop="datePublished">2023-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js原型与原型链"><a href="#js原型与原型链" class="headerlink" title="js原型与原型链"></a>js原型与原型链</h3><h5 id="js原型"><a href="#js原型" class="headerlink" title="js原型"></a>js原型</h5><ul>
+<li><p>函数的prototype属性</p>
+<ul>
+<li><p>每个函数都有一个prototype属性，它默认指向一个object空对象（即为原型对象）</p>
+</li>
+<li><p>原型对象有一个属性constructor，它指向函数对象</p>
+</li>
+<li><p>` function fn (){}</p>
+<p>        console.log(fn.prototype.constructor === fn)； ////true</p>
+<p>`</p>
+</li>
+</ul>
+<p>给原型对象添加属性（一般是方法）==&gt;实例对象引用</p>
+</li>
+<li><p>显示原型属性与隐式原型属性</p>
+<p>函数中，都有一个prototype（显示原型属性），它指向函数的原型对象</p>
+<p>实例对象中，都存在一个<code>__proto__</code>(隐式原型属性)，它指向函数的原型对象</p>
+<p><img src="C:\Users\86173\Desktop\前端\markdown\图片\QQ截图20220420205026.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn.__proto__===Fn.prototype</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="Object对象与Function函数-与Object-prototype"><a href="#Object对象与Function函数-与Object-prototype" class="headerlink" title="Object对象与Function函数    与Object.prototype"></a>Object对象与Function函数    与Object.prototype</h5><p>在了解原型与原型链之前，先简单理解一下Object对象    Function函数</p>
+<p>object对象   ：在js中几乎所有的对象都是object对象的实例    由于这层关系，根据实例对象中的原型属性最终都可以找到Object.prototype</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">实例对象.__proto__    ==&gt;Object.prototype</span><br></pre></td></tr></table></figure>
+
+<p>Function函数：简单来说每个 JavaScript 函数实际上都是一个 <code>Function</code> 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;).<span class="property">constructor</span> === <span class="title class_">Function</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>在根据原型的性质，所有的函数的隐式原型属性都指向Function.prototype</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;&#125;).__proto__ === Function.prototype//true</span><br></pre></td></tr></table></figure>
+
+<h5 id="函数与对象的完整原型链"><a href="#函数与对象的完整原型链" class="headerlink" title="函数与对象的完整原型链"></a>函数与对象的完整原型链</h5><p><img src="C:\Users\86173\Desktop\前端\markdown\图片\yuanxinglian.png"></p>
+<h5 id="原型链的作用：继承"><a href="#原型链的作用：继承" class="headerlink" title="原型链的作用：继承"></a>原型链的作用：继承</h5><p>js在Object.prototype这个原型链的终点上部署了一些方法来实现js标准库中一些方法的实现</p>
+<p>js在对象调用一个函数/属性，先是通过函数本身寻找，若没有，再去原型链上去寻找</p>
+<p>而且对象可以直接调用原型的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name,age</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">name</span>=name,</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">age</span>=age</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">setName</span>=<span class="keyword">function</span>(<span class="params">name</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">name</span>=name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> p=<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;mqm&#x27;</span>,<span class="number">22</span>)</span><br></pre></td></tr></table></figure>
+
+<p>简单的原型链的继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Box</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Box</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getValue</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">value</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> box = <span class="keyword">new</span> <span class="title class_">Box</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title class_">Box</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getValue</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">value</span> + <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">box.<span class="title function_">getValue</span>(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>不同对象函数的继承、</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">- ```js</span><br><span class="line">        <span class="comment">//父类型</span></span><br><span class="line">      function <span class="title function_">Supper</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.supProp = <span class="string">&quot;mqm&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//父  添加方法</span></span><br><span class="line">      Supper.prototype.ShowSupperProp=function()&#123;</span><br><span class="line">        console.log(<span class="built_in">this</span>.supProp);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//子类型</span></span><br><span class="line">      function <span class="title function_">Sub</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.subProp = <span class="string">&quot;tom&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//创建父的实例对象给子的原型</span></span><br><span class="line">      Sub.prototype =<span class="keyword">new</span> <span class="title class_">Supper</span>()</span><br><span class="line">      <span class="comment">//让子类型的原型的constructor指向子类型</span></span><br><span class="line">      sub.prototype.construtctor= sub()</span><br><span class="line">      <span class="comment">//给子类型添加方法</span></span><br><span class="line">      sub.prototype.showSubProp = function()&#123;</span><br><span class="line">        console.log(<span class="built_in">this</span>.subProp);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//创建子类型的对象</span></span><br><span class="line">      <span class="keyword">var</span> sub= <span class="keyword">new</span> <span class="title class_">Sub</span>()</span><br><span class="line">      sub.showSubProp()</span><br><span class="line">      sub.ShowSupperProp()</span><br></pre></td></tr></table></figure>
+
+<p>组合继承</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   function Person(name,age)&#123;</span><br><span class="line">        this.name=name</span><br><span class="line">        this.age=age</span><br><span class="line">      &#125;</span><br><span class="line">      Person.prototype.setName=function(name)&#123;</span><br><span class="line">        tihs.name=name</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      function Student(name,age,price)&#123;</span><br><span class="line">        Person.call(this,name,age)//相当于this.person（name，age）</span><br><span class="line">        /*</span><br><span class="line">        this.name=name</span><br><span class="line">        this.age=age</span><br><span class="line">        */</span><br><span class="line">        this.price=price</span><br><span class="line">      &#125;</span><br><span class="line">//原型链继承</span><br><span class="line">      Student.prototype=new Person()</span><br><span class="line"></span><br><span class="line">      Student.prototype.constructor = Student</span><br><span class="line"></span><br><span class="line">      Student.prototype.setPrice=function(price)&#123;</span><br><span class="line">        this.price=price</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      var s = new Student(&#x27;mqm&#x27;,22,22)</span><br><span class="line">      console.log(s);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/11/js%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/" data-id="clf3yhsp10006i8v6fiyi4h01" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/11/node.js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/11/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/11/ajax/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/jq/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/es6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/11/VUE/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
