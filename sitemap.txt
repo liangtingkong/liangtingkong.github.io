@@ -1,7 +1,10 @@
+http://example.com/statistics/index.html
+http://example.com/music/index.html
+http://example.com/categories/index.html
+http://example.com/comments/index.html
 http://example.com/about/index.html
 http://example.com/essay/index.html
 http://example.com/movies/index.html
-http://example.com/music/index.html
 http://example.com/link/index.html
 http://example.com/tags/index.html
 http://example.com/2023/03/11/es6/
